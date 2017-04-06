@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>grid-auto-flow: dense</title>
+    <link href="css/dense.css" rel="stylesheet">
+</head>
+<body>
+<h1>grid-auto-flow: dense</h1>
+
+<form>
+    <label for="firstname">First name:</label>
+    <input type="text" id="firstname" name="firstname" />
+    <label for="lastname">Last name:</label>
+    <input type="text" id="lastname" name="lastname" />
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" />
+    <label for="address2">Address 2:</label>
+    <input type="text" id="address2" name="address2" />
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" />
+    <label for="zip">Zip:</label>
+    <input type="text" id="zip" name="zip" />
+
+    <div class="department-block">
+        <label for="department">Department:</label>
+        <br>
+        <select id="department" name="department" multiple>
+            <option value="finance">Finance</option>
+            <option value="humanresources">Human Resources</option>
+            <option value="marketing">Marketing</option>
+        </select>
+    </div>
+
+    <div class="buttons">
+        <button id="cancel">Cancel</button>
+        <button id="back">Back</button>
+        <button id="next">Next</button>
+    </div>
+</form>
+
+<div class="description">
+    <div>
+        <h4>HTML</h4>
+        <pre>
+&lt;form>
+  &lt;label for="firstname">First name:&lt;/label>
+  &lt;input type="text" id="firstname" name="firstname" />
+  &lt;label for="lastname">Last name:&lt;/label>
+  &lt;input type="text" id="lastname" name="lastname" />
+  &lt;label for="address">Address:&lt;/label>
+  &lt;input type="text" id="address" name="address" />
+  &lt;label for="address2">Address 2:&lt;/label>
+  &lt;input type="text" id="address2" name="address2" />
+  &lt;label for="city">City:&lt;/label>
+  &lt;input type="text" id="city" name="city" />
+  &lt;label for="zip">Zip:&lt;/label>
+  &lt;input type="text" id="zip" name="zip" />
+
+  &lt;div class="department-block">
+    &lt;label for="department">Department:&lt;/label>
+    &lt;select id="department" name="department" multiple>
+      &lt;option value="finance">Finance&lt;/option>
+      &lt;option value="humanresources">Human Resources&lt;/option>
+      &lt;option value="marketing">Marketing&lt;/option>
+    &lt;/select>
+  &lt;/div>
+
+  &lt;div class="buttons">
+  &lt;button id="cancel">Cancel&lt;/button>
+  &lt;button id="back">Back&lt;/button>
+  &lt;button id="next">Next&lt;/button>
+  &lt;/div>
+&lt;/form>
+        </pre>
+        <h4>CSS</h4>
+        <pre>
+form {
+    display: grid;
+    grid-template-columns: [labels] auto [controls] auto [oversized] auto;
+    grid-auto-flow: dense;
+  }
+form > label {
+    grid-column: labels;
+    grid-row: auto;
+  }
+form > input, form > select {
+    grid-column: controls;
+    grid-row: auto;
+  }
+.department-block{
+    grid-column: oversized;
+    grid-row: span 3;
+  }
+.buttons {
+    grid-row: auto;
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+        </pre>
+    </div>
+    <div>
+        <p>Вот так выглядит форма без применения <code>grid-auto-flow: dense</code></p>
+        <img src="images/grid3-1-500x373.jpg">
+    </div>
+</div>
+
+
+
+</body>
+</html>

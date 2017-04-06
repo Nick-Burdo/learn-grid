@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Named Cells</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrapper-areas">
+    <header class="column blue">
+        <h1>Раскладка по именованным ячейкам</h1>
+    </header>
+
+    <main class="column mute">
+        <h3>HTML</h3>
+        <pre>
+&lt;div class="wrapper">
+    &lt;header> ... &lt;/header>
+
+    &lt;main> ... &lt;/main>
+
+    &lt;aside class="nav"> ... &lt;/aside>
+
+    &lt;aside class="banner> ... &lt;/aside>
+
+    &lt;footer> ... &lt;/footer>
+&lt;/div>
+        </pre>
+
+        <h3>CSS</h3>
+        <pre>
+.wrapper-areas {
+    display: grid;
+    grid-template-columns: 200px 1fr 400px;
+    grid-template-areas:    "head head head"
+                            "nav main banner"
+                            "foot foot foot";
+}
+.wrapper-areas>header {
+    grid-area: head;
+}
+.wrapper-areas>.nav {
+    grid-area: nav;
+}.wrapper-areas>.banner {
+    grid-area: banner;
+}.wrapper-areas>main {
+    grid-area: main;
+}.wrapper-areas>footer {
+    grid-area: foot;
+}
+        </pre>
+    </main>
+
+    <aside class="column green nav">
+        <h4>Содержание</h4>
+        <ul>
+            <li>Первое</li>
+            <li>Второе</li>
+            <li>Третье</li>
+            <li>Четвертое</li>
+        </ul>
+    </aside>
+
+    <aside class="column green banner">
+        <img src="images/grid-named-lines-500x288.png">
+    </aside>
+
+    <footer class="column dark">
+        &copy; Iterios 2017
+    </footer>
+</div>
+
+</body>
+</html>

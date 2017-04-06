@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Гибкие гриды</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="css/flexible.css">
+</head>
+<body>
+<h1>Гибкие гриды</h1>
+<p>
+    В отличие от раскладки, основанной на медиавыражениях, которая привязана к области просмотра (это не подходит для изолированных модулей),
+    здесь компоненты <strong>адаптируются к тому пространству, которое им доступно.</strong>
+</p>
+<div class="wrapper">
+    <div class="grid">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+    <div class="description">
+        <h4>HTML</h4>
+        <pre>
+&lt;div class="grid">
+    &lt;div>1&lt;/div>
+    &lt;div>2&lt;/div>
+    &lt;div>3&lt;/div>
+    &lt;div>4&lt;/div>
+    &lt;div>5&lt;/div>
+    &lt;div>6&lt;/div>
+&lt;/div>
+        </pre>
+        <h4>CSS</h4>
+        <pre>
+.grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit, minmax(250px, 1fr));
+}
+        </pre>
+    </div>
+</div>
+</body>
+</html>

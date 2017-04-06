@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сложная раскладка</title>
+    <link rel="stylesheet" href="css/ticky.css">
+</head>
+<body>
+<h1>Сложная раскладка</h1>
+<div class="wrapper">
+    <div class="grid">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+
+    <div class="description">
+        <h4>HTML</h4>
+        <pre>
+&lt;div class="grid">
+    &lt;div>1&lt;/div>
+    &lt;div>2&lt;/div>
+    &lt;div>3&lt;/div>
+    &lt;div>4&lt;/div>
+    &lt;div>5&lt;/div>
+    &lt;div>6&lt;/div>
+    &lt;div>7&lt;/div>
+    &lt;div>8&lt;/div>
+    &lt;div>9&lt;/div>
+    &lt;div>10&lt;/div>
+    &lt;div>11&lt;/div>
+    &lt;div>12&lt;/div>
+&lt;/div>
+        </pre>
+
+        <h4>CSS</h4>
+        <pre>
+.grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+.grid > div:nth-child(1),
+.grid > div:nth-child(3),
+.grid > div:nth-child(4) {
+    grid-row-start: span 3;
+}
+.grid > div:nth-child(2) {
+    grid-row-start: span 4;
+    grid-column-start: span 2;
+}
+.grid > div:nth-child(5) {
+    grid-row-start: span 3;
+    grid-column-start: span 3;
+}
+.grid > div:nth-child(7) {
+    grid-column-start: span 2;
+}
+.grid > div:nth-child(8),
+.grid > div:nth-child(9),
+.grid > div:nth-child(12) {
+    grid-column-start: span 3;
+}
+
+        </pre>
+    </div>
+</div>
+</body>
+</html>
